@@ -118,25 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ========================================
-    // SPLASH SCREEN / POPUP DE ENTRADA
-    // ========================================
-    const splashPopup = document.getElementById("splash-popup");
-    const btnEntrar = document.getElementById("btn-entrar-site");
-
-    // Verifica se a utilizadora já fechou o popup nesta sessão
-    if (sessionStorage.getItem("splashExibido") === "true") {
-        if (splashPopup) {
-            splashPopup.style.display = "none";
-        }
-    } else {
-        if (btnEntrar && splashPopup) {
-            btnEntrar.addEventListener("click", () => {
-                splashPopup.classList.add("oculto");
-                sessionStorage.setItem("splashExibido", "true");
-            });
-        }
-    }
 
     // Muda a cor da barra de navegação ao rolar
     const nav = document.querySelector(".navegacao");
