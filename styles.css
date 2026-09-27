@@ -56,52 +56,70 @@ textarea {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
+    background: var(--rosa);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184, 155, 93, 0.3);
+}
 
-    background: rgba(224, 65, 127, 0.88);
+.nav-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    backdrop-filter: blur(10px);
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: var(--offwhite);
+}
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+.logo-icone {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1.5px solid var(--dourado-claro);
+}
+
+.logo-texto {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--offwhite);
 }
 
 .menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-
+    gap: 2.5rem;
     list-style: none;
 }
 
 .menu-link {
     position: relative;
-
     display: inline-block;
-
-    padding: 0.5rem 0;
-
+    padding: 0.4rem 0;
     color: var(--offwhite);
     text-decoration: none;
-
     font-size: 1.05rem;
     font-weight: 600;
-
     transition: color var(--transicao);
 }
 
 .menu-link::after {
     content: "";
-
     position: absolute;
     left: 0;
     bottom: 0;
-
     width: 0;
     height: 2px;
-
     background: var(--dourado-claro);
-
     transition: width var(--transicao);
 }
 
@@ -113,46 +131,118 @@ textarea {
     width: 100%;
 }
 
-
 /* ========================================
-   CABEÇALHO (LOGO ORIGINAL RESTAURADA)
+   CABEÇALHO
 ======================================== */
 
-.cabecalho {
+.cabecalho.hero-fundo {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 120px 2rem 80px;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.35), transparent 60%);
+    padding: 120px 8% 80px;
+    /* Gradiente suave na esquerda para garantir leitura perfeita do texto sem cobrir as flores da direita */
+    background: 
+        linear-gradient(to right, rgba(253, 248, 245, 0.92) 20%, rgba(253, 248, 245, 0.65) 50%, rgba(253, 248, 245, 0.1) 85%),
+        url("./img/home.jpg") no-repeat right center / cover;
 }
 
-.cabecalho > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.hero-conteudo-sobreposto {
+    max-width: 620px;
+    text-align: left;
 }
 
-.profilepic {
-    width: 350px;
-    height: 300px;
-    object-fit: contain; /* <-- Volta a conter o SVG perfeitamente centralizado */
-    object-position: center;
-
-    border-radius: 50%;
-    border: 5px solid var(--dourado-claro);
-    outline: 2px solid var(--dourado);
-
-    display: block;
-    margin: 0 auto 2rem;
-}
-
-.cabecalho h1 {
-    color: var(--azul);
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 500;
+.hero-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
     letter-spacing: 0.15em;
+    color: var(--rosa);
+    margin-bottom: 1.2rem;
+    display: inline-block;
+}
+
+.hero-conteudo-sobreposto h1 {
+    color: var(--azul);
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-conteudo-sobreposto p {
+    color: var(--azul-claro);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 2.4rem;
+}
+
+.hero-botoes {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.botao-hero-destaque {
+    padding: 0.95rem 2.2rem;
+    background-color: var(--rosa);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: transform var(--transicao), background-color var(--transicao), box-shadow var(--transicao);
+    box-shadow: 0 8px 20px rgba(224, 65, 127, 0.3);
+}
+
+.botao-hero-destaque:hover {
+    background-color: #c9346e;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(224, 65, 127, 0.4);
+}
+
+.botao-hero-secundario {
+    padding: 0.95rem 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--dourado);
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.botao-hero-secundario:hover {
+    background-color: var(--dourado-claro);
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .cabecalho.hero-fundo {
+        padding: 140px 1.5rem 60px;
+        background: 
+            linear-gradient(to bottom, rgba(253, 248, 245, 0.88) 0%, rgba(253, 248, 245, 0.92) 100%),
+            url("./img/home.jpg") no-repeat center center / cover;
+        text-align: center;
+    }
+
+    .hero-conteudo-sobreposto {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
 }
 
 

@@ -10,46 +10,42 @@
 
 <body>
 
-   <nav class="navegacao">
-        <ul class="menu">
+  <nav class="navegacao">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">
+                <img src="./img/RR.svg" alt="Rose Nail Logo" class="logo-icone">
+                <span class="logo-texto">RoseNail</span>
+            </a>
 
-            <li>
-                <a href="#inicio" class="menu-link">Inicio</a>
-            </li>
-
-            <li>
-                <a href="#sobre" class="menu-link">Sobre</a>
-            </li>
-
-            <!-- NOVO LINK DO MENU -->
-            <li>
-                <a href="#servicos" class="menu-link">Serviços</a>
-            </li>
-
-            <li>
-                <a href="#cliente" class="menu-link">Nossas Clientes</a>
-            </li>
-
-            <li>
-                <a href="#contatos" class="menu-link">Contatos</a>
-            </li>
-
-        </ul>
+            <ul class="menu">
+                <li><a href="#inicio" class="menu-link">Inicio</a></li>
+                <li><a href="#sobre" class="menu-link">Sobre</a></li>
+                <li><a href="#servicos" class="menu-link">Serviços</a></li>
+                <li><a href="#cliente" class="menu-link">Nossas Clientes</a></li>
+                <li><a href="#contatos" class="menu-link">Contatos</a></li>
+            </ul>
+        </div>
     </nav>
 
 
 <!-- ========================================
-         CABEÇALHO (LOGO FIXA)
+         CABEÇALHO 
     ========================================= -->
-    <main id="inicio" class="cabecalho">
+<main id="inicio" class="cabecalho hero-fundo">
 
-        <div>
-            <img src="./img/RR.svg" class="profilepic" alt="Rose Nail Logo">
-            <h1>RoseNail</h1>
+        <div class="hero-conteudo-sobreposto">
+            <span class="hero-tag">Estética & Beauty Studio em Roppongi</span>
+            <h1>Realce a sua beleza natural</h1>
+            <p>
+                Especialistas em Micropigmentação, Nail Design e cuidados estéticos de alto padrão. Excelência e tradição em Tóquio.
+            </p>
+            <div class="hero-botoes">
+                <a href="#contatos" class="botao-hero-destaque">Agendar Horário</a>
+                <a href="#servicos" class="botao-hero-secundario">Conhecer Serviços</a>
+            </div>
         </div>
 
     </main>
-
 
     <!-- ========================================
          SOBRE NÓS COM CARROSSEL SINCRONIZADO
@@ -374,7 +370,7 @@
 
             <div class="cliente-card">
                 <img 
-                    src="./img/Eyeliner.jpg"
+                    src="./img/eyeliner.jpg"
                     class="cliente-foto"
                     alt="Eyeliner"
                 >
