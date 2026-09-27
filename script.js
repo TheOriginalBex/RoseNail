@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // ========================================
-    // 1. CARROSSEL DO "SOBRE NÓS" (FOTO + TEXTO)
+    // CARROSSEL DO "SOBRE NÓS" (FOTO + TEXTO)
     // ========================================
     const slidesFotos = document.querySelectorAll(".portrait-slide");
     const biosTexto = document.querySelectorAll(".sobre-bio");
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ========================================
-    // 2. CONTROLE DE ABAS (CLIENTES)
+    // CONTROLE DE ABAS (CLIENTES)
     // ========================================
     const abas = document.querySelectorAll(".aba");
     const galerias = document.querySelectorAll(".galeria-servico");
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ========================================
-    // 3. ENVIO WHATSAPP
+    // ENVIO WHATSAPP
     // ========================================
     const formContato = document.getElementById("formulario");
 
@@ -117,4 +117,36 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+
+    // ========================================
+    // SPLASH SCREEN / POPUP DE ENTRADA
+    // ========================================
+    const splashPopup = document.getElementById("splash-popup");
+    const btnEntrar = document.getElementById("btn-entrar-site");
+
+    // Verifica se a utilizadora já fechou o popup nesta sessão
+    if (sessionStorage.getItem("splashExibido") === "true") {
+        if (splashPopup) {
+            splashPopup.style.display = "none";
+        }
+    } else {
+        if (btnEntrar && splashPopup) {
+            btnEntrar.addEventListener("click", () => {
+                splashPopup.classList.add("oculto");
+                sessionStorage.setItem("splashExibido", "true");
+            });
+        }
+    }
+
+    // Muda a cor da barra de navegação ao rolar
+    const nav = document.querySelector(".navegacao");
+    if (nav) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                nav.classList.add("rolou");
+            } else {
+                nav.classList.remove("rolou");
+            }
+        });
+    }
 });

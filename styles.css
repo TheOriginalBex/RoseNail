@@ -49,202 +49,132 @@ textarea {
 /* ========================================
    NAVEGAÇÃO
 ======================================== */
-
 .navegacao {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 0.8rem 2rem;
-    background: var(--rosa);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(184, 155, 93, 0.3);
-}
-
-.nav-container {
-    max-width: 1250px;
-    margin: 0 auto;
+    padding: 1.5rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: transparent; /* Começa invisível sobre a foto */
+    transition: background 0.3s ease, padding 0.3s ease;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    text-decoration: none;
-    color: var(--offwhite);
-}
-
-.logo-icone {
-    width: 38px;
-    height: 38px;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 1.5px solid var(--dourado-claro);
-}
-
-.logo-texto {
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--offwhite);
+/* Fundo ao rolar a página */
+.navegacao.rolou {
+    background: rgba(224, 65, 127, 0.95); /* O rosa característico com leve transparência */
+    padding: 0.8rem 3rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .menu {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 2.5rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-link {
-    position: relative;
-    display: inline-block;
-    padding: 0.4rem 0;
-    color: var(--offwhite);
+    color: #ffffff;
     text-decoration: none;
-    font-size: 1.05rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    transition: color var(--transicao);
-}
-
-.menu-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background: var(--dourado-claro);
-    transition: width var(--transicao);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
 .menu-link:hover {
-    color: white;
+    color: #ffd885;
 }
 
-.menu-link:hover::after {
-    width: 100%;
-}
-
-/* ========================================
-   CABEÇALHO
-======================================== */
-
-.cabecalho.hero-fundo {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 120px 8% 80px;
-    /* Gradiente suave na esquerda para garantir leitura perfeita do texto sem cobrir as flores da direita */
-    background: 
-        linear-gradient(to right, rgba(253, 248, 245, 0.92) 20%, rgba(253, 248, 245, 0.65) 50%, rgba(253, 248, 245, 0.1) 85%),
-        url("./img/home.jpg") no-repeat right center / cover;
-}
-
-.hero-conteudo-sobreposto {
-    max-width: 620px;
-    text-align: left;
-}
-
-.hero-tag {
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--rosa);
-    margin-bottom: 1.2rem;
+.botao-reserva {
     display: inline-block;
-}
-
-.hero-conteudo-sobreposto h1 {
-    color: var(--azul);
-    font-size: clamp(2.8rem, 5vw, 4.4rem);
-    font-weight: 500;
-    line-height: 1.15;
-    letter-spacing: 0.02em;
-    margin-bottom: 1.5rem;
-}
-
-.hero-conteudo-sobreposto p {
-    color: var(--azul-claro);
-    font-size: 1.15rem;
-    line-height: 1.8;
-    margin-bottom: 2.4rem;
-}
-
-.hero-botoes {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-}
-
-.botao-hero-destaque {
-    padding: 0.95rem 2.2rem;
-    background-color: var(--rosa);
+    padding: 0.45rem 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
     color: #ffffff;
     text-decoration: none;
+    font-size: 0.8rem;
     font-weight: 600;
-    font-size: 1rem;
-    border-radius: 6px;
-    transition: transform var(--transicao), background-color var(--transicao), box-shadow var(--transicao);
-    box-shadow: 0 8px 20px rgba(224, 65, 127, 0.3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
-.botao-hero-destaque:hover {
-    background-color: #c9346e;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(224, 65, 127, 0.4);
+.botao-reserva:hover {
+    background: #ffffff;
+    color: #e0417f;
 }
 
-.botao-hero-secundario {
-    padding: 0.95rem 2rem;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 1px solid var(--dourado);
-    color: var(--azul);
+
+/* ========================================
+   CABEÇALHO / HERO
+======================================== */
+.cabecalho {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    background: url("./img/hero-roppongi.jpg") no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 2.5rem;
+}
+
+/* Indicador de mouse para rolar */
+.scroll-indicador {
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    border-radius: 6px;
-    backdrop-filter: blur(4px);
-    transition: background-color var(--transicao), transform var(--transicao);
+    cursor: pointer;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
 }
 
-.botao-hero-secundario:hover {
-    background-color: var(--dourado-claro);
-    transform: translateY(-2px);
+.scroll-indicador:hover {
+    transform: translateY(3px);
+}
+
+.mouse-icon {
+    width: 20px;
+    height: 32px;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.mouse-wheel {
+    width: 3px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    animation: rolarMouse 1.8s infinite ease-in-out;
+}
+
+@keyframes rolarMouse {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(10px); }
 }
 
 
+/* Responsivo para telemóveis */
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 0.6rem;
+    .navegacao {
+        padding: 1rem 1.5rem;
     }
-
-    .cabecalho.hero-fundo {
-        padding: 140px 1.5rem 60px;
-        background: 
-            linear-gradient(to bottom, rgba(253, 248, 245, 0.88) 0%, rgba(253, 248, 245, 0.92) 100%),
-            url("./img/home.jpg") no-repeat center center / cover;
-        text-align: center;
-    }
-
-    .hero-conteudo-sobreposto {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .hero-botoes {
-        justify-content: center;
+    
+    .menu {
+        display: none; /* No telemóvel prioriza o botão de reserva direto */
     }
 }
-
 
 /* ========================================
    SOBRE NÓS (CARROSSEL FOTO + TEXTO)
