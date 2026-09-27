@@ -130,4 +130,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Conecta o seletor personalizado ao Google Tradutor
+    const seletorIdioma = document.getElementById("tradutor-idioma");
+    if (seletorIdioma) {
+        seletorIdioma.addEventListener("change", (e) => {
+            const idiomaEscolhido = e.target.value;
+            const seletorGoogle = document.querySelector(".goog-te-combo");
+
+            if (seletorGoogle) {
+                seletorGoogle.value = idiomaEscolhido;
+                seletorGoogle.dispatchEvent(new Event("change"));
+            }
+        });
+    }
 });
