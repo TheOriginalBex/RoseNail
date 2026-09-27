@@ -364,7 +364,7 @@ textarea {
 
     .cabecalho {
     
-        background-position: 46% 42% !important;
+        background-position: 43% 42% !important;
         background-size: cover;
         height: 100svh;
         min-height: 550px;
@@ -1175,64 +1175,45 @@ textarea {
     }
 
             /* Tradução do Google Translate */
-        /* Oculta barras superiores e balões indesejados */
-        .goog-te-banner-frame,
-        .goog-te-banner-frame.skiptranslate,
-        body > .skiptranslate,
-        #goog-gt-tt {
-            display: none !important;
-            visibility: hidden !important;
-        }
+                    .seletor-idioma {
+                    display: inline-flex;
+                    align-items: center;
+                }
 
-        body {
-            top: 0px !important;
-        }
+                #tradutor-idioma {
+                    background: rgba(255, 255, 255, 0.2);
+                    border: 1px solid rgba(255, 255, 255, 0.6);
+                    color: #ffffff;
+                    padding: 0.35rem 0.8rem;
+                    border-radius: 20px;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    outline: none;
+                    backdrop-filter: blur(8px);
+                    -webkit-backdrop-filter: blur(8px);
+                    transition: background 0.3s ease, border-color 0.3s ease;
+                }
 
-        /* Alinhamento na navbar */
-        #google_translate_element {
-            display: inline-flex !important;
-            align-items: center !important;
-            vertical-align: middle !important;
-            max-height: 38px !important;
-            overflow: hidden !important;
-        }
+                #tradutor-idioma:hover {
+                    background: rgba(255, 255, 255, 0.35);
+                    border-color: #ffffff;
+                }
 
-        /* Força a remoção de tabelas e fundos brancos nativos */
-        #google_translate_element * {
-            background: transparent !important;
-            box-shadow: none !important;
-        }
+                /* Cor do texto dentro da lista quando abre */
+                #tradutor-idioma option {
+                    background-color: #1e293b;
+                    color: #ffffff;
+                }
 
-        /* Transforma o elemento em uma pílula translúcida */
-        #google_translate_element .goog-te-gadget-simple {
-            background-color: rgba(255, 255, 255, 0.22) !important;
-            border: 1px solid rgba(255, 255, 255, 0.55) !important;
-            border-radius: 20px !important;
-            padding: 5px 12px !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 6px !important;
-            backdrop-filter: blur(8px) !important;
-            -webkit-backdrop-filter: blur(8px) !important;
-            height: auto !important;
-        }
+                /* Oculta barras que o Google tenta injetar no topo da página */
+                .goog-te-banner-frame.skiptranslate,
+                body > .skiptranslate,
+                #goog-gt-tt {
+                    display: none !important;
+                }
 
-        /* Texto branco e tamanho proporcional à barra */
-        #google_translate_element .goog-te-gadget-simple a,
-        #google_translate_element .goog-te-gadget-simple span {
-            color: #ffffff !important;
-            font-size: 0.78rem !important;
-            font-weight: 500 !important;
-            letter-spacing: 0.05em !important;
-            text-decoration: none !important;
-        }
-
-        /* Esconde as imagens/linhas divisórias verticais extras */
-        #google_translate_element .goog-te-gadget-simple img {
-            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.8)) !important;
-        }
-
-        #google_translate_element .goog-te-gadget-simple span[style*="border-left"] {
-            display: none !important;
-        }
+                body {
+                    top: 0px !important;
+                }
 }
