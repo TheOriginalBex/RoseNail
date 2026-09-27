@@ -1,0 +1,1141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+:root {
+    --rosa: #e0417f;
+    --rosa-claro: #f5a6c2;
+    --dourado: #b89b5d;
+    --dourado-claro: #d8c28f;
+    --azul: #1a2e50;
+    --azul-claro: #30466a;
+    --offwhite: #f2e8d8;
+    --offwhite-2: #faf5ed;
+    --cinza: #e5e5e5;
+    --cinza-escuro: #777;
+    --preto: #000;
+    --verde: #25D366;
+
+    --sombra: 0 10px 30px rgba(26, 46, 80, 0.12);
+    --transicao: 0.3s ease;
+}
+
+body {
+    background-color: var(--offwhite);
+    color: var(--azul);
+    font-family: "Times New Roman", Times, serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+/* ========================================
+   NAVEGAÇÃO
+======================================== */
+
+.navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 2rem;
+
+    background: rgba(224, 65, 127, 0.88);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    list-style: none;
+}
+
+.menu-link {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 0.5rem 0;
+
+    color: var(--offwhite);
+    text-decoration: none;
+
+    font-size: 1.05rem;
+    font-weight: 600;
+
+    transition: color var(--transicao);
+}
+
+.menu-link::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--dourado-claro);
+
+    transition: width var(--transicao);
+}
+
+.menu-link:hover {
+    color: white;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   CABEÇALHO (LOGO ORIGINAL RESTAURADA)
+======================================== */
+
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 2rem 80px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.35), transparent 60%);
+}
+
+.cabecalho > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profilepic {
+    width: 350px;
+    height: 300px;
+    object-fit: contain; /* <-- Volta a conter o SVG perfeitamente centralizado */
+    object-position: center;
+
+    border-radius: 50%;
+    border: 5px solid var(--dourado-claro);
+    outline: 2px solid var(--dourado);
+
+    display: block;
+    margin: 0 auto 2rem;
+}
+
+.cabecalho h1 {
+    color: var(--azul);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+}
+
+
+/* ========================================
+   SOBRE NÓS (CARROSSEL FOTO + TEXTO)
+======================================== */
+
+.sobre {
+    padding: 7rem 7%;
+    background-color: var(--offwhite-2);
+}
+
+.sobre-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 440px 1fr;
+    gap: 4.5rem;
+    align-items: start;
+}
+
+/* Container do Carrossel de Fotos */
+.sobre-carrossel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrossel-fotos-wrapper {
+    position: relative;
+    width: 100%;
+    height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobre-slides-fotos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    box-shadow: 15px 15px 0 var(--dourado);
+    overflow: hidden;
+}
+
+.portrait-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease;
+}
+
+.portrait-slide.ativa {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Botões do Carrossel na Foto */
+.sobre-carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(26, 46, 80, 0.7);
+    color: var(--offwhite);
+    border: 1px solid rgba(184, 155, 93, 0.4);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.sobre-carrossel-btn:hover {
+    background: var(--rosa);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.sobre-carrossel-btn.prev {
+    left: 15px;
+}
+
+.sobre-carrossel-btn.next {
+    right: 15px;
+}
+
+/* Bolinhas de Navegação */
+.sobre-indicadores {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.8rem;
+}
+
+.sobre-indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(184, 155, 93, 0.4);
+    cursor: pointer;
+    transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.sobre-indicador.ativa {
+    background-color: var(--rosa);
+    transform: scale(1.25);
+}
+
+/* Área de Texto Sincronizada */
+.sobre-textos-container {
+    padding-top: 0.5rem;
+}
+
+.sobretitulo {
+    margin: 0 0 2rem;
+    color: var(--azul);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+}
+
+.cargo-tag {
+    display: inline-block;
+    color: var(--rosa);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+}
+
+.sobre-bio {
+    display: none;
+    animation: fadeTexto 0.6s ease;
+}
+
+.sobre-bio.ativa {
+    display: block;
+}
+
+@keyframes fadeTexto {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sobre-bio h3 {
+    margin-bottom: 1.5rem;
+    color: var(--azul);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.sobre-bio p {
+    margin-bottom: 1.3rem;
+    color: var(--azul-claro);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.sobre .assinatura {
+    margin-top: 2rem;
+    color: var(--azul);
+    font-style: italic;
+    font-size: 1.1rem;
+    border-left: 3px solid var(--dourado);
+    padding-left: 1rem;
+}
+
+/* Adaptação Responsiva */
+@media (max-width: 900px) {
+    .sobre-conteudo {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .carrossel-fotos-wrapper {
+        width: min(100%, 460px);
+        height: 480px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carrossel-fotos-wrapper {
+        width: 100%;
+        height: 380px;
+    }
+
+    .profilepic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .sobre-bio p {
+        text-align: left;
+    }
+}
+
+
+/* ========================================
+   IMAGEM
+======================================== */
+
+.portrait {
+    width: 100%;
+    height: 560px;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    box-shadow:
+        15px 15px 0 var(--dourado);
+
+    transition: transform 0.4s ease;
+}
+
+.portrait:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ========================================
+   TEXTO
+======================================== */
+
+.sobre-texto {
+    padding-top: 0.5rem;
+}
+
+.sobre h3 {
+    margin-bottom: 1.5rem;
+
+    color: var(--rosa);
+
+    font-size: 2rem;
+
+    font-weight: 500;
+}
+
+.sobre p {
+    margin-bottom: 1.5rem;
+
+    color: var(--azul-claro);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    text-align: justify;
+}
+
+.sobre .assinatura {
+    margin-top: 2rem;
+
+    color: var(--azul);
+
+    font-style: italic;
+
+    font-size: 1.1rem;
+
+    border-left: 3px solid var(--dourado);
+
+    padding-left: 1rem;
+}
+
+
+/* ========================================
+   SEÇÃO NOSSOS SERVIÇOS
+======================================== */
+
+.servicos {
+    padding: 7rem 7%;
+    background-color: var(--offwhite-2);
+    border-top: 1px solid rgba(184, 155, 93, 0.2);
+}
+
+.servicos-titulo {
+    color: var(--azul);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.servicos-subtitulo {
+    text-align: center;
+    color: var(--azul-claro);
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto 4rem;
+}
+
+.servicos-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+}
+
+.servico-card {
+    background-color: #ffffff;
+    padding: 2.2rem 1.6rem;
+    border-radius: 12px;
+    border: 1px solid rgba(184, 155, 93, 0.28);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+}
+
+.servico-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(26, 46, 80, 0.12);
+    border-color: var(--dourado);
+}
+
+.servico-icone {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 10px;
+    background-color: rgba(224, 65, 127, 0.1);
+    color: var(--rosa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    flex-shrink: 0;
+    transition: background-color var(--transicao), color var(--transicao);
+}
+
+.servico-icone svg {
+    width: 24px !important;
+    height: 24px !important;
+    display: block;
+}
+
+.servico-card:hover .servico-icone {
+    background-color: var(--rosa);
+    color: #ffffff;
+}
+
+.servico-card h3 {
+    color: var(--azul);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.servico-card p {
+    color: var(--azul-claro);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.servico-link {
+    color: var(--rosa);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: transform var(--transicao), color var(--transicao);
+}
+
+.servico-link:hover {
+    color: var(--azul);
+    transform: translateX(4px);
+}
+
+/* ========================================
+   NOSSAS CLIENTES
+======================================== */
+
+.cliente {
+    padding: 7rem 7%;
+
+    background-color: var(--offwhite);
+}
+
+.cliente-titulo {
+    max-width: 1200px;
+
+    margin: 0 auto 3rem;
+
+    color: var(--azul);
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    font-weight: 500;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   ABAS DOS SERVIÇOS
+======================================== */
+
+.cliente-abas {
+    max-width: 1200px;
+
+    margin: 0 auto 2rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    flex-wrap: wrap;
+
+    position: relative;
+    z-index: 20;
+}
+
+.aba {
+    position: relative;
+    z-index: 21;
+
+    padding: 0.7rem 1.4rem;
+
+    border: 1px solid var(--dourado);
+
+    border-radius: 6px;
+
+    background-color: transparent;
+
+    color: var(--azul);
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        background-color var(--transicao),
+        color var(--transicao),
+        transform var(--transicao);
+}
+
+.aba:hover {
+    background-color: var(--dourado-claro);
+
+    color: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+.aba.ativa {
+    background-color: var(--rosa);
+
+    color: white;
+
+    border-color: var(--rosa);
+}
+
+
+/* ========================================
+   GALERIA DE CADA SERVIÇO
+======================================== */
+
+.galeria-servico {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: none;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+}
+
+.galeria-servico.ativa {
+    display: grid;
+}
+
+
+/* ========================================
+   CARDS DAS CLIENTES
+======================================== */
+
+.cliente-card {
+    overflow: hidden;
+
+    position: relative;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(184, 155, 93, 0.25);
+
+    box-shadow: var(--sombra);
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao);
+}
+
+.cliente-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 35px rgba(184, 155, 93, 0.3);
+}
+
+.cliente-foto {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.cliente-card:hover .cliente-foto {
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   CONTATO
+======================================== */
+
+.contatos {
+    padding: 7rem 2rem 8rem;
+
+    background-color: var(--azul);
+
+    color: var(--offwhite);
+}
+
+.contatos-titulo {
+    margin-bottom: 3rem;
+
+    color: var(--offwhite);
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    font-weight: 500;
+
+    text-align: center;
+}
+
+.formulario-contato {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 2.5rem;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.grupo-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+
+/* ========================================
+   CAMPOS DO FORMULÁRIO
+======================================== */
+
+.grupo-form input,
+.grupo-form textarea {
+    width: 100%;
+
+    padding: 1rem 1.2rem;
+
+    border: 1px solid rgba(242, 232, 216, 0.3);
+
+    border-radius: 7px;
+
+    background-color: rgba(242, 232, 216, 0.08);
+
+    color: var(--offwhite);
+
+    font-size: 1rem;
+
+    outline: none;
+
+    resize: vertical;
+
+    transition:
+        border-color var(--transicao),
+        background-color var(--transicao),
+        box-shadow var(--transicao);
+}
+
+.grupo-form input::placeholder,
+.grupo-form textarea::placeholder {
+    color: rgba(242, 232, 216, 0.7);
+}
+
+.grupo-form input:focus,
+.grupo-form textarea:focus {
+    border-color: var(--dourado-claro);
+
+    background-color: rgba(242, 232, 216, 0.13);
+
+    box-shadow:
+        0 0 0 3px rgba(216, 194, 143, 0.12);
+}
+
+
+/* ========================================
+   BOTÃO WHATSAPP
+======================================== */
+
+.botaoform {
+    width: 100%;
+
+    margin-top: 1.5rem;
+
+    padding: 1rem 2rem;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: var(--verde);
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        background-color var(--transicao);
+}
+
+.botaoform:hover {
+    background-color: #20bd5c;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.botaoform:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   INFORMAÇÕES DE CONTATO (CONTAINER)
+======================================== */
+
+.informacoes-contato {
+    max-width: 650px;
+    margin: 3.5rem auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+
+/* ========================================
+   ESTILIZAÇÃO DO BLOCO "ONDE ESTAMOS"
+======================================== */
+
+.endereco-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(184, 155, 93, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform var(--transicao), border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.endereco-box:hover {
+    transform: translateY(-3px);
+    border-color: var(--dourado-claro);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+}
+
+.endereco-label {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dourado-claro);
+    font-weight: 600;
+    margin: 0;
+}
+
+.link-endereco {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    color: var(--offwhite);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color var(--transicao);
+}
+
+.link-endereco:hover {
+    color: white;
+}
+
+.icone-mapa {
+    color: var(--rosa);
+    transition: transform var(--transicao);
+}
+
+.link-endereco:hover .icone-mapa {
+    transform: scale(1.15);
+}
+
+
+/* ========================================
+   REDES SOCIAIS / INSTAGRAM
+======================================== */
+
+.redes-sociais {
+    text-align: center;
+}
+
+.redes-sociais p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: rgba(242, 232, 216, 0.8);
+}
+
+.botao-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--dourado);
+    border-radius: 30px;
+    color: var(--offwhite);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all var(--transicao);
+}
+
+.botao-instagram:hover {
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.icone-instagram,
+.botao-instagram svg {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+    display: inline-block;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .sobre-conteudo {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .portrait {
+        width: min(100%, 500px);
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+    }
+
+    .galeria-servico {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 600px) {
+
+    /* Navegação */
+
+    .navegacao {
+        padding: 0.8rem 1rem;
+    }
+
+    .menu {
+        gap: 1.5rem;
+    }
+
+    .menu-link {
+        font-size: 0.9rem;
+    }
+
+
+    /* Cabeçalho */
+
+    .cabecalho {
+        min-height: 90vh;
+        padding: 100px 1.5rem 60px;
+    }
+
+
+    .cabecalho h1 {
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+    }
+
+
+    /* Sobre */
+
+    .sobre {
+        padding: 7rem 7%;
+    }
+
+    .sobre-conteudo {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .portrait {
+        width: 100%;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .sobre-texto {
+        padding-top: 0;
+    }
+
+    .sobretitulo {
+        margin: 0 0 2rem;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .sobre h3 {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .sobre p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .sobre .assinatura {
+        margin-top: 3rem;
+        padding: 1.2rem 0 1.2rem 1.5rem;
+        border-left: 3px solid var(--dourado);
+        font-size: 1.3rem;
+        line-height: 1.7;
+    }
+
+
+    /* Serviços Mobile */
+
+    .servicos {
+        padding: 5rem 1.5rem;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .servico-card {
+        padding: 2rem 1.5rem;
+    }
+
+
+    /* Clientes */
+
+    .cliente {
+        padding: 5rem 1.5rem;
+    }
+
+    .cliente-titulo {
+        margin-bottom: 2.5rem;
+    }
+
+    .cliente-abas {
+        gap: 0.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .aba {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.9rem;
+    }
+
+    .galeria-servico {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cliente-foto {
+        height: 300px;
+    }
+
+
+    /* Contato & Endereço */
+
+    .contatos {
+        padding: 5rem 1.5rem 6rem;
+    }
+
+    .formulario-contato {
+        padding: 1.5rem;
+    }
+
+    .endereco-box {
+        padding: 1.2rem 1.4rem;
+        width: 100%;
+    }
+
+    .link-endereco {
+        font-size: 1rem;
+        flex-direction: column;
+        gap: 0.4rem;
+        text-align: center;
+    }
+}

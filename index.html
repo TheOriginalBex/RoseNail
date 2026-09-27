@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rose Nail</title>
+</head>
+
+<body>
+
+   <nav class="navegacao">
+        <ul class="menu">
+
+            <li>
+                <a href="#inicio" class="menu-link">Inicio</a>
+            </li>
+
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+
+            <!-- NOVO LINK DO MENU -->
+            <li>
+                <a href="#servicos" class="menu-link">Serviços</a>
+            </li>
+
+            <li>
+                <a href="#cliente" class="menu-link">Nossas Clientes</a>
+            </li>
+
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+<!-- ========================================
+         CABEÇALHO (LOGO FIXA)
+    ========================================= -->
+    <main id="inicio" class="cabecalho">
+
+        <div>
+            <img src="./img/RR.svg" class="profilepic" alt="Rose Nail Logo">
+            <h1>RoseNail</h1>
+        </div>
+
+    </main>
+
+
+    <!-- ========================================
+         SOBRE NÓS COM CARROSSEL SINCRONIZADO
+    ========================================= -->
+    <section id="sobre" class="sobre">
+
+        <div class="sobre-conteudo">
+
+            <!-- Lado Esquerdo: Carrossel de Fotos com Controles -->
+            <div class="sobre-carrossel">
+                
+                <div class="carrossel-fotos-wrapper">
+                    <button type="button" class="sobre-carrossel-btn prev" id="sobre-prev" aria-label="Foto anterior">&#10094;</button>
+
+                    <div class="sobre-slides-fotos">
+                        <img src="./img/dona.jpg" class="portrait-slide ativa" alt="Rose Nail - Fundadora">
+                        <img src="./img/jenny.jpg" class="portrait-slide" alt="Profissional 2">
+                        <img src="./img/naomi.jpg" class="portrait-slide" alt="Profissional 3">
+                    </div>
+
+                    <button type="button" class="sobre-carrossel-btn next" id="sobre-next" aria-label="Próxima foto">&#10095;</button>
+                </div>
+
+                <!-- Indicadores (Bolinhas) -->
+                <div class="sobre-indicadores">
+                    <span class="sobre-indicador ativa" data-slide="0"></span>
+                    <span class="sobre-indicador" data-slide="1"></span>
+                    <span class="sobre-indicador" data-slide="2"></span>
+                </div>
+
+            </div>
+
+            <!-- Lado Direito: Textos que mudam junto com a foto -->
+            <div class="sobre-textos-container">
+
+                <h2 class="sobretitulo">Sobre nós</h2>
+
+                <!-- Texto Pessoa 1 (Fundadora) -->
+                <div class="sobre-bio ativa">
+                    <span class="cargo-tag">Fundadora & Master Artist</span>
+                    <h3>Rose Nail</h3>
+
+                    <p>
+                        Minha paixão pelas unhas começou ainda na adolescência, aos 12/13 anos. 
+                        Desde então, a beleza se tornou muito mais do que uma profissão: tornou-se parte da minha história.
+                    </p>
+                    <p>
+                        Ao longo dos anos, trabalhei em diferentes salões aperfeiçoando técnicas. Em 2014, cheguei ao Japão, 
+                        atuei em salão japonês e atendia a domicílio, construindo minha clientela. Em 2017, fundei a Rose Nail em Roppongi.
+                    </p>
+                    <p>
+                        Hoje, com quase 10 anos de história, estou formando uma nova equipe de especialistas em unhas, 
+                        sobrancelhas e estética para oferecer um atendimento completo e exclusivo.
+                    </p>
+                    <p class="assinatura">
+                        Rose Nail — uma história construída com dedicação, paixão e amor pela beleza.
+                    </p>
+                </div>
+
+                <!-- Texto Pessoa 2: Jennifer Layana -->
+                <div class="sobre-bio">
+                        <span class="cargo-tag">Micropigmentação & Estética Facial</span>
+                            <h3>Jennifer Layana</h3>
+
+                                 <p>
+                                     Natural de Guayaquil, Equador, traz mais de 10 anos de experiência nas artes estéticas. 
+                                     Com formação internacional no Equador, Brasil, Japão e Coreia, é especialista em 
+                                    maquiagem definitiva sob medida e tratamentos faciais avançados, realçando a beleza natural com precisão e cuidado.
+                                    </p>
+                                    <p class="assinatura">
+                                        "Com Deus, dedicação e muito amor, tudo é possível."
+                                     </p>
+                </div>
+
+                        <!-- Texto Pessoa 3: Naomi Nakamura -->
+                <div class="sobre-bio">
+                         <span class="cargo-tag">Nail Artist & Pedicure Specialist</span>
+                            <h3>Naomi Nakamura</h3>
+
+                                <p>
+                                     Especialista em pedicure desde 2022, seu trabalho une beleza, saúde das unhas e rigor aos detalhes. 
+                                     Atua com foco em pedicure profissional, spa dos pés, cutilagem profunda e cuidados com unhas encravadas através de um atendimento delicado e personalizado.
+                                 </p>
+                                <p class="assinatura">
+                                     Mãos e pés bem cuidados refletem elegância e bem-estar.
+                                 </p>
+                                </div>
+                                
+
+        </div>
+
+    </section>
+
+   <!-- ========================================
+         NOSSOS SERVIÇOS
+    ========================================= -->
+
+    <section id="servicos" class="servicos">
+
+        <h2 class="servicos-titulo">Nossos Serviços</h2>
+        <p class="servicos-subtitulo">Cuidados especializados em estética, micropigmentação e beleza das unhas.</p>
+
+        <div class="servicos-grid">
+
+            <!-- Card 1: Hand nail -->
+            <article class="servico-card">
+                <div class="servico-icone">
+                    <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                        <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+                        <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+                        <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+                    </svg>
+                </div>
+                <h3>Hand Nail</h3>
+                <p>Cutilagem, modelagem e esmaltação cuidadosa das unhas das mãos com acabamento refinado e duradouro.</p>
+                <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
+            </article>
+
+            <!-- Card 2: Foot nail -->
+            <article class="servico-card">
+                <div class="servico-icone">
+                    <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 16v-2.38C4 11.5 7 11 7 11l1-4c1-4 6-4 7 0l1 4s3 .5 3 2.62V16c0 4-4 6-8 6s-7-2-7-6z"></path>
+                    </svg>
+                </div>
+                <h3>Foot Nail</h3>
+                <p>Higiene, desenho e esmaltação completa para os pés com precisão estética e conforto.</p>
+                <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
+            </article>
+
+            <!-- Card 3: Foot spa -->
+            <article class="servico-card">
+                <div class="servico-icone">
+                    <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                    </svg>
+                </div>
+                <h3>Foot Spa</h3>
+                <p>Tratamento relaxante com esfoliação, hidratação profunda e renovação da pele dos pés.</p>
+                <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
+            </article>
+
+            <!-- Card 4: Alongamentos de unhas -->
+            <article class="servico-card">
+                <div class="servico-icone">
+                    <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 3h12l-2 18H8L6 3z"></path>
+                        <path d="M10 8h4"></path>
+                    </svg>
+                </div>
+                <h3>Alongamentos de Unhas</h3>
+                <p>Técnicas avançadas de extensão em gel com estrutura resistente, curvatura natural e acabamento impecável.</p>
+                <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
+            </article>
+
+            <!-- Card 5: Microblading -->
+            <article class="servico-card">
+                <div class="servico-icone">
+                    <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m18 2 4 4-12 12H6v-4L18 2z"></path>
+                    </svg>
+                </div>
+                <h3>Microblading</h3>
+                <p>Desenho fio a fio de alta precisão para preenchimento de falhas e harmonização das sobrancelhas.</p>
+                <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
+            </article>
+
+            <!-- Card 6: Eyeliner -->
+            <article class="servico-card">
+                <div class="servico-icone">
+                    <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path>
+                    </svg>
+                </div>
+                <h3>Eyeliner</h3>
+                <p>Micropigmentação na linha dos olhos para valorizar o olhar com delineado sutil e definição de longa duração.</p>
+                <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
+            </article>
+
+            <!-- Card 7: Lip -->
+            <article class="servico-card">
+                <div class="servico-icone">
+                    <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 21a9 9 0 0 0 9-9c0-4.97-4.03-9-9-9s-9 4.03-9 9a9 9 0 0 0 9 9z"></path>
+                        <path d="M8 13c1 2 3 3 4 3s3-1 4-3"></path>
+                    </svg>
+                </div>
+                <h3>Lip</h3>
+                <p>Micropigmentação labial para revitalização da cor, contorno e aspecto natural de lábios saudáveis.</p>
+                <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
+            </article>
+
+            <!-- Card 8: SMP -->
+            <article class="servico-card">
+                <div class="servico-icone">
+                    <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                    </svg>
+                </div>
+                <h3>SMP</h3>
+                <p>Micropigmentação capilar para simulação de folículos e cobertura de falhas ou rarefação no couro cabeludo.</p>
+                <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================
+         NOSSAS CLIENTES
+    ========================================= -->
+
+    <section id="cliente" class="cliente">
+
+        <h2 class="cliente-titulo">Nossas clientes</h2>
+
+
+        <!-- ABAS -->
+
+        <div class="cliente-abas">
+
+            <button 
+                type="button"
+                class="aba ativa"
+                data-servico="microblading"
+            >
+                Microblading
+            </button>
+
+            <button 
+                type="button"
+                class="aba"
+                data-servico="eyeliner"
+            >
+                Eyeliner
+            </button>
+
+            <button 
+                type="button"
+                class="aba"
+                data-servico="lip"
+            >
+                Lip
+            </button>
+
+        
+           
+
+        </div>
+
+
+        <!-- ========================================
+             MICROBLADING
+        ========================================= -->
+
+        <div 
+            class="galeria-servico ativa"
+            id="microblading"
+        >
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/microblading.jpg"
+                    class="cliente-foto"
+                    alt="Microblading"
+                >
+            </div>
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/microblading1.jpg"
+                    class="cliente-foto"
+                    alt="Microblading"
+                >
+            </div>
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/microblading2.jpg"
+                    class="cliente-foto"
+                    alt="Microblading"
+                >
+            </div>
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/microblading3.jpg"
+                    class="cliente-foto"
+                    alt="Microblading"
+                >
+            </div>
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/microblading4.jpg"
+                    class="cliente-foto"
+                    alt="Microblading"
+                >
+            </div>
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/microblading5.jpg"
+                    class="cliente-foto"
+                    alt="Microblading"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- ========================================
+             EYELINER
+        ========================================= -->
+
+        <div 
+            class="galeria-servico"
+            id="eyeliner"
+        >
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/Eyeliner.jpg"
+                    class="cliente-foto"
+                    alt="Eyeliner"
+                >
+            </div>
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/eyeliner1.jpg"
+                    class="cliente-foto"
+                    alt="Eyeliner"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- ========================================
+             LIP
+        ========================================= -->
+
+        <div 
+            class="galeria-servico"
+            id="lip"
+        >
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/lip.jpg"
+                    class="cliente-foto"
+                    alt="Lip"
+                >
+            </div>
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/lip1.jpg"
+                    class="cliente-foto"
+                    alt="Lip"
+                >
+            </div>
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/lip2.jpg"
+                    class="cliente-foto"
+                    alt="Lip"
+                >
+            </div>
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/lip3.jpg"
+                    class="cliente-foto"
+                    alt="Lip"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- ========================================
+             SMP
+        ========================================= -->
+
+        <div 
+            class="galeria-servico"
+            id="smp"
+        >
+
+            <div class="cliente-card">
+                <img 
+                    src="./img/PlaceHolderCliente.png"
+                    class="cliente-foto"
+                    alt="SMP"
+                >
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         CONTATO
+    ========================================= -->
+
+    <section id="contatos" class="contatos">
+
+        <h2 class="contatos-titulo">Agende conosco</h2>
+
+        <form class="formulario-contato" id="formulario">
+
+            <div class="grupo-form">
+
+                <input 
+                    type="text"
+                    placeholder="Nome"
+                    class="campo-form"
+                    id="nome"
+                >
+
+                <textarea 
+                    class="campo-form"
+                    placeholder="Digite sua mensagem"
+                    rows="4"
+                    id="mensagem"
+                ></textarea>
+
+            </div>
+
+            <button 
+                type="submit" 
+                class="botaoform"
+            >
+                Enviar WhatsApp
+            </button>
+
+        </form>
+        
+        <div class="informacoes-contato">
+
+            <div class="endereco-box">
+                <p class="endereco-label">Onde estamos</p>
+                <a 
+                    href="https://maps.google.com/?q=Roppongi+Minato+Tokyo+Japan" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="link-endereco"
+                >
+                    <svg class="icone-mapa" width="20" height="20" style="width: 20px; height: 20px; min-width: 20px; min-height: 20px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>〒106-0032
+                    東京都港区六本木7丁目15番13号
+                    六本木ダイヤハイツ 801号室
+                    Tokyo-to, Minato-ku, Roppongi 7-chome 15-13
+                    Roppongi Daiya Heights, Room 801</span>
+                </a>
+            </div>
+
+            <div class="redes-sociais">
+                <p>Acompanhe nossos trabalhos:</p>
+                <a href="https://www.instagram.com/rose.nail.roppongi" target="_blank" rel="noopener noreferrer" class="botao-instagram">
+                    <svg class="icone-instagram" width="22" height="22" style="width: 22px; height: 22px; min-width: 22px; min-height: 22px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span>@rose.nail.roppongi</span>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
