@@ -600,6 +600,14 @@ textarea {
     text-align: center;
 }
 
+#unhas .cliente-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 50% centraliza horizontalmente | 20% puxa o enquadramento mais para cima (baixa a foto) */
+    object-position: 50% 20%;
+}
+
 
 /* ========================================
    ABAS DOS SERVIÇOS
