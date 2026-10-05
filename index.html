@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta name="google-site-verification" content="F9u0LK12ELsWzuI1iOSCKxoy_yiVRAVi5t8Noq6jxhE" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,7 @@
 
 <body>
 
-<nav class="navegacao">
+    <nav class="navegacao">
         <ul class="menu">
             <li><a href="#inicio" class="menu-link">HOME</a></li>
             <li><a href="#sobre" class="menu-link">SOBRE</a></li>
@@ -20,27 +19,20 @@
             <li><a href="#cliente" class="menu-link">CLIENTES</a></li>
             <li><a href="#contatos" class="menu-link">CONTATOS</a></li>
         </ul>
-        <div style="display: flex; align-items: center; gap: 1rem;"></div>
 
-        <!-- Seletor de idioma -->
-                    <div class="seletor-idioma">
-                <select id="tradutor-idioma" aria-label="Selecionar Idioma">
-                    <option value="pt">🇧🇷 PT</option>
-                    <option value="ja">🇯🇵 日本語</option>
-                    <option value="en">🇺🇸 EN</option>
-                    <option value="es">🇪🇸 ES</option>
-                </select>
-            </div>
-
+        <div class="seletor-idioma">
+            <select id="tradutor-idioma" aria-label="Selecionar Idioma">
+                <option value="pt">🇧🇷 PT</option>
+                <option value="ja">🇯🇵 日本語</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+            </select>
+        </div>
 
         <a href="#contatos" class="botao-reserva">Agendar</a>
     </nav>
 
-    <!-- ========================================
-         CABEÇALHO COM A IMAGEM DE FUNDO
-    ========================================= -->
     <main id="inicio" class="cabecalho">
-        <!-- Ícone para rolar a página -->
         <a href="#sobre" class="scroll-indicador" aria-label="Rolar para baixo">
             <span class="mouse-icon">
                 <span class="mouse-wheel"></span>
@@ -48,18 +40,10 @@
         </a>
     </main>
 
-    </main>
-
-    <!-- ========================================
-         SOBRE NÓS COM CARROSSEL SINCRONIZADO
-    ========================================= -->
     <section id="sobre" class="sobre">
-
         <div class="sobre-conteudo">
 
-            <!-- Lado Esquerdo: Carrossel de Fotos com Controles -->
             <div class="sobre-carrossel">
-                
                 <div class="carrossel-fotos-wrapper">
                     <button type="button" class="sobre-carrossel-btn prev" id="sobre-prev" aria-label="Foto anterior">&#10094;</button>
 
@@ -72,25 +56,19 @@
                     <button type="button" class="sobre-carrossel-btn next" id="sobre-next" aria-label="Próxima foto">&#10095;</button>
                 </div>
 
-                <!-- Indicadores (Bolinhas) -->
                 <div class="sobre-indicadores">
                     <span class="sobre-indicador ativa" data-slide="0"></span>
                     <span class="sobre-indicador" data-slide="1"></span>
                     <span class="sobre-indicador" data-slide="2"></span>
                 </div>
-
             </div>
 
-            <!-- Lado Direito: Textos que mudam junto com a foto -->
             <div class="sobre-textos-container">
-
                 <h2 class="sobretitulo">Sobre nós</h2>
 
-                <!-- Texto Pessoa 1 (Fundadora) -->
                 <div class="sobre-bio ativa">
                     <span class="cargo-tag">Fundadora & Master Artist</span>
                     <h3>Rose Nail</h3>
-
                     <p>
                         "Minha paixão pelas unhas começou ainda na adolescência, aos 12/13 anos. 
                         Desde então, a beleza se tornou muito mais do que uma profissão: tornou-se parte da minha história.
@@ -108,52 +86,41 @@
                     </p>
                 </div>
 
-                <!-- Texto Pessoa 2: Jennifer Layana -->
                 <div class="sobre-bio">
-                        <span class="cargo-tag">Micropigmentação & Estética Facial</span>
-                            <h3>Jennifer Layana</h3>
-
-                                 <p>
-                                     Natural de Guayaquil, Equador, traz mais de 10 anos de experiência nas artes estéticas. 
-                                     Com formação internacional no Equador, Brasil, Japão e Coreia, é especialista em 
-                                    maquiagem definitiva sob medida e tratamentos faciais avançados, realçando a beleza natural com precisão e cuidado.
-                                    </p>
-                                    <p class="assinatura">
-                                        "Com Deus, dedicação e muito amor, tudo é possível."
-                                     </p>
+                    <span class="cargo-tag">Micropigmentação & Estética Facial</span>
+                    <h3>Jennifer Layana</h3>
+                    <p>
+                        Natural de Guayaquil, Equador, traz mais de 10 anos de experiência nas artes estéticas. 
+                        Com formação internacional no Equador, Brasil, Japão e Coreia, é especialista em 
+                        maquiagem definitiva sob medida e tratamentos faciais avançados, realçando a beleza natural com precisão e cuidado.
+                    </p>
+                    <p class="assinatura">
+                        "Com Deus, dedicação e muito amor, tudo é possível."
+                    </p>
                 </div>
 
-                        <!-- Texto Pessoa 3: Naomi Nakamura -->
                 <div class="sobre-bio">
-                         <span class="cargo-tag">Nail Artist & Pedicure Specialist</span>
-                            <h3>Naomi Nakamura</h3>
-
-                                <p>
-                                     Especialista em pedicure desde 2022, seu trabalho une beleza, saúde das unhas e rigor aos detalhes. 
-                                     Atua com foco em pedicure profissional, spa dos pés, cutilagem profunda e cuidados com unhas encravadas através de um atendimento delicado e personalizado.
-                                 </p>
-                                <p class="assinatura">
-                                     Mãos e pés bem cuidados refletem elegância e bem-estar.
-                                 </p>
-                                </div>
-                                
+                    <span class="cargo-tag">Nail Artist & Pedicure Specialist</span>
+                    <h3>Naomi Nakamura</h3>
+                    <p>
+                        Especialista em pedicure desde 2022, seu trabalho une beleza, saúde das unhas e rigor aos detalhes. 
+                        Atua com foco em pedicure profissional, spa dos pés, cutilagem profunda e cuidados com unhas encravadas através de um atendimento delicado e personalizado.
+                    </p>
+                    <p class="assinatura">
+                        Mãos e pés bem cuidados refletem elegância e bem-estar.
+                    </p>
+                </div>
+            </div>
 
         </div>
-
     </section>
 
-   <!-- ========================================
-         NOSSOS SERVIÇOS
-    ========================================= -->
-
     <section id="servicos" class="servicos">
-
         <h2 class="servicos-titulo">Nossos Serviços</h2>
         <p class="servicos-subtitulo">Cuidados especializados em estética, micropigmentação e beleza das unhas.</p>
 
         <div class="servicos-grid">
 
-            <!-- Card 1: Hand nail -->
             <article class="servico-card">
                 <div class="servico-icone">
                     <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -168,7 +135,6 @@
                 <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
             </article>
 
-            <!-- Card 2: Foot nail -->
             <article class="servico-card">
                 <div class="servico-icone">
                     <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -180,7 +146,6 @@
                 <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
             </article>
 
-            <!-- Card 3: Foot spa -->
             <article class="servico-card">
                 <div class="servico-icone">
                     <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -192,7 +157,6 @@
                 <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
             </article>
 
-            <!-- Card 4: Alongamentos de unhas -->
             <article class="servico-card">
                 <div class="servico-icone">
                     <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -205,7 +169,6 @@
                 <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
             </article>
 
-            <!-- Card 5: Microblading -->
             <article class="servico-card">
                 <div class="servico-icone">
                     <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -217,7 +180,6 @@
                 <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
             </article>
 
-            <!-- Card 6: Eyeliner -->
             <article class="servico-card">
                 <div class="servico-icone">
                     <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -230,7 +192,6 @@
                 <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
             </article>
 
-            <!-- Card 7: Lip -->
             <article class="servico-card">
                 <div class="servico-icone">
                     <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -243,7 +204,6 @@
                 <a href="#contatos" class="servico-link">Agendar serviço &rarr;</a>
             </article>
 
-            <!-- Card 8: SMP -->
             <article class="servico-card">
                 <div class="servico-icone">
                     <svg width="26" height="26" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -256,261 +216,92 @@
             </article>
 
         </div>
-
     </section>
-
-    <!-- ========================================
-         NOSSAS CLIENTES
-    ========================================= -->
 
     <section id="cliente" class="cliente">
-
         <h2 class="cliente-titulo">Nossos clientes</h2>
 
-
-        <!-- ABAS -->
-
         <div class="cliente-abas">
-
-            <button 
-                type="button"
-                class="aba ativa"
-                data-servico="microblading"
-            >
-                Microblading
-            </button>
-
-            <button 
-                type="button"
-                class="aba"
-                data-servico="eyeliner"
-            >
-                Eyeliner
-            </button>
-
-            <button 
-                type="button"
-                class="aba"
-                data-servico="lip"
-            >
-                Lip
-            </button>
-
-        
-           
-
+            <button type="button" class="aba ativa" data-servico="unhas">Unhas</button>
+            <button type="button" class="aba" data-servico="microblading">Microblading</button>
+            <button type="button" class="aba" data-servico="eyeliner">Eyeliner</button>
+            <button type="button" class="aba" data-servico="lip">Lip</button>
+            <button type="button" class="aba" data-servico="smp">SMP</button>
         </div>
 
-
-        <!-- ========================================
-             MICROBLADING
-        ========================================= -->
-
-        <div 
-            class="galeria-servico ativa"
-            id="microblading"
-        >
-
+        <div class="galeria-servico ativa" id="unhas">
             <div class="cliente-card">
-                <img 
-                    src="./img/microblading.jpg"
-                    class="cliente-foto"
-                    alt="Microblading"
-                >
+                <img src="./img/unhas.png" class="cliente-foto" alt="Unhas">
             </div>
-
             <div class="cliente-card">
-                <img 
-                    src="./img/microblading1.jpg"
-                    class="cliente-foto"
-                    alt="Microblading"
-                >
+                <img src="./img/unhas1.jpg" class="cliente-foto" alt="Unhas">
             </div>
-
             <div class="cliente-card">
-                <img 
-                    src="./img/microblading2.jpg"
-                    class="cliente-foto"
-                    alt="Microblading"
-                >
+                <img src="./img/unhas2.png" class="cliente-foto" alt="Unhas">
             </div>
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/microblading3.jpg"
-                    class="cliente-foto"
-                    alt="Microblading"
-                >
+                      <div class="cliente-card">
+                <img src="./img/unhas3.jpg" class="cliente-foto" alt="Unhas">
             </div>
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/microblading4.jpg"
-                    class="cliente-foto"
-                    alt="Microblading"
-                >
+                      <div class="cliente-card">
+                <img src="./img/unhas4.png" class="cliente-foto" alt="Unhas">
             </div>
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/microblading5.jpg"
-                    class="cliente-foto"
-                    alt="Microblading"
-                >
+                       <div class="cliente-card">
+                <img src="./img/unhas5.jpg" class="cliente-foto" alt="Unhas">
             </div>
-
+            
         </div>
 
-
-        <!-- ========================================
-             EYELINER
-        ========================================= -->
-
-        <div 
-            class="galeria-servico"
-            id="eyeliner"
-        >
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/eyeliner.jpg"
-                    class="cliente-foto"
-                    alt="Eyeliner"
-                >
-            </div>
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/eyeliner1.jpg"
-                    class="cliente-foto"
-                    alt="Eyeliner"
-                >
-            </div>
-
+        <div class="galeria-servico" id="microblading">
+            <div class="cliente-card"><img src="./img/microblading.jpg" class="cliente-foto" alt="Microblading"></div>
+            <div class="cliente-card"><img src="./img/microblading1.jpg" class="cliente-foto" alt="Microblading"></div>
+            <div class="cliente-card"><img src="./img/microblading2.jpg" class="cliente-foto" alt="Microblading"></div>
+            <div class="cliente-card"><img src="./img/microblading3.jpg" class="cliente-foto" alt="Microblading"></div>
+            <div class="cliente-card"><img src="./img/microblading4.jpg" class="cliente-foto" alt="Microblading"></div>
+            <div class="cliente-card"><img src="./img/microblading5.jpg" class="cliente-foto" alt="Microblading"></div>
         </div>
 
-
-        <!-- ========================================
-             LIP
-        ========================================= -->
-
-        <div 
-            class="galeria-servico"
-            id="lip"
-        >
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/lip.jpg"
-                    class="cliente-foto"
-                    alt="Lip"
-                >
-            </div>
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/lip1.jpg"
-                    class="cliente-foto"
-                    alt="Lip"
-                >
-            </div>
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/lip2.jpg"
-                    class="cliente-foto"
-                    alt="Lip"
-                >
-            </div>
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/lip3.jpg"
-                    class="cliente-foto"
-                    alt="Lip"
-                >
-            </div>
-
+        <div class="galeria-servico" id="eyeliner">
+            <div class="cliente-card"><img src="./img/eyeliner.jpg" class="cliente-foto" alt="Eyeliner"></div>
+            <div class="cliente-card"><img src="./img/eyeliner1.jpg" class="cliente-foto" alt="Eyeliner"></div>
         </div>
 
-
-        <!-- ========================================
-             SMP
-        ========================================= -->
-
-        <div 
-            class="galeria-servico"
-            id="smp"
-        >
-
-            <div class="cliente-card">
-                <img 
-                    src="./img/PlaceHolderCliente.png"
-                    class="cliente-foto"
-                    alt="SMP"
-                >
-            </div>
-
+        <div class="galeria-servico" id="lip">
+            <div class="cliente-card"><img src="./img/lip.jpg" class="cliente-foto" alt="Lip"></div>
+            <div class="cliente-card"><img src="./img/lip1.jpg" class="cliente-foto" alt="Lip"></div>
+            <div class="cliente-card"><img src="./img/lip2.jpg" class="cliente-foto" alt="Lip"></div>
+            <div class="cliente-card"><img src="./img/lip3.jpg" class="cliente-foto" alt="Lip"></div>
         </div>
 
+        <div class="galeria-servico" id="smp">
+            <div class="cliente-card">
+                <img src="./img/PlaceHolderCliente.png" class="cliente-foto" alt="SMP">
+            </div>
+        </div>
     </section>
 
-
-    <!-- ========================================
-         CONTATO
-    ========================================= -->
-
     <section id="contatos" class="contatos">
-
         <h2 class="contatos-titulo">Agende conosco</h2>
 
         <form class="formulario-contato" id="formulario">
-
             <div class="grupo-form">
-
-                <input 
-                    type="text"
-                    placeholder="Nome"
-                    class="campo-form"
-                    id="nome"
-                >
-
-                <textarea 
-                    class="campo-form"
-                    placeholder="Digite sua mensagem"
-                    rows="4"
-                    id="mensagem"
-                ></textarea>
-
+                <input type="text" placeholder="Nome" class="campo-form" id="nome">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem"></textarea>
             </div>
-
-            <button 
-                type="submit" 
-                class="botaoform"
-            >
-                Enviar WhatsApp
-            </button>
-
+            <button type="submit" class="botaoform">Enviar WhatsApp</button>
         </form>
-        
-        <div class="informacoes-contato">
 
+        <div class="informacoes-contato">
             <div class="endereco-box">
                 <p class="endereco-label">Onde estamos</p>
-                <a 
-                    href="https://maps.google.com/?q=Roppongi+Minato+Tokyo+Japan" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    class="link-endereco"
-                >
+                <a href="https://maps.google.com/?q=Roppongi+Minato+Tokyo+Japan" target="_blank" rel="noopener noreferrer" class="link-endereco">
                     <svg class="icone-mapa" width="20" height="20" style="width: 20px; height: 20px; min-width: 20px; min-height: 20px; flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
-                    <span>〒106-0032
-                    東京都港区六本木7丁目15番13号
-                    六本木ダイヤハイツ 801号室
-                    Tokyo-to, Minato-ku, Roppongi 7-chome 15-13
+                    <span>〒106-0032<br>
+                    東京都港区六本木7丁目15番13号<br>
+                    六本木ダイヤハイツ 801号室<br>
+                    Tokyo-to, Minato-ku, Roppongi 7-chome 15-13<br>
                     Roppongi Daiya Heights, Room 801</span>
                 </a>
             </div>
@@ -526,15 +317,12 @@
                     <span>@rose.nail.roppongi</span>
                 </a>
             </div>
-
         </div>
-
     </section>
-
 
     <script src="./script.js"></script>
 
-   <div id="google_translate_element" style="display: none;"></div>
+    <div id="google_translate_element" style="display: none;"></div>
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
